@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">DetectCof</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_artikel">Article</string>
+    <string name="nav_tersimpan">Saved</string>
+
+    <string name="selamat_dat">
+Welcome to DetectCof App
+</string>
+    <string name="kami_senang">
+We are happy to have you on board to improve the quality of Indonesian coffee
+</string>
+
+    <string name="slide2">Coffee Disease Detection easily and quickly</string>
+    <string name="subTitleSlide2">Know the health quality of your coffee plants to take preventive measures</string>
+    <string name="title_slide3">Helps increase crop yields</string>
+    <string name="sub_title_Slide3">Early detection of coffee health can help improve the quality of coffee yields</string>
+    <string name="ini_banner">Ini Banner</string>
+
+    <string name="text_btn_scan">Detect Now</string>
+    <string name="content_edit">How to use</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="judul_artikel">Nama Pahlawan</string>
+    <string name="sub_title">Deskripsi</string>
+    <string name="guide">Guide</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="mulai">Start</string>
+    <string name="artikel_terkait">Related Article</string>
+    <string name="view_all">View All</string>
+    <string name="aplikasi_deteksi_kopi">DetectCof App</string>
+    <string name="text_hasil">Successful Disease Identification</string>
+    <string name="hasil_penyakit">KARAT DAUN</string>
+    <string name="text_penyebab">Jamur Hemilela Vaststrix</string>
+    <string name="title_deskripsi">Description</string>
+    <string name="text_deskripsi">Penyakit karat daun terutama menyerang kopi arabika yang ditanam di dataran rendah. Awalnya terlihat bercak-bercak kuning muda pada daun. Kemudian, bercak berubah kuning tua tertutup oleh tepung spora, terutama.....Selengkapnya</string>
+    <string name="obat">Medicine</string>
+    <string name="title_pencegahan">Mitigation</string>
+    <string name="simpan">Save</string>
+    <string name="text_btn_galery">Choose from Gallery</string>
+    <string name="text_from_camera">Capture from Camera</string>
+    <string name="tv_detect_using">Detection leaves using</string>
+
+
+    <string-array name="data_judul">
+        <item>Recognize Coffee Plant Pests and Their Control</item>
+        <item>Coffee Prices Strengthen, Tabanan Farmers Are Happy</item>
+        <item>Coffee plantation area in Rejang Lebong reaches 30,386.5 hectares</item>
+        <item>Coffee Farmers Need to Beware of These Climate Threats to Stay in the Game</item>
+        <item>Types of Coffee in Indonesia that are successful worldwide, what are they? </item>
+        <item>Improvement of Coffee Plant Pest Management Capability</item>
+        <item>North Sumatra\'s Coffee Production Worsens, Threatened by El Nino, Pests and European Embargo</item>
+    </string-array>
+
+    <string-array name="data_sub">
+        <item>Coffee Pests and Diseases - One of the leading plantation commodities that is widely cultivated by farmers is coffee.</item>
+        <item>A number of robusta coffee farmers in Tabanan Regency are happy. How not, the price of one of the plantation products with domestic to export market share is strengthening.</item>
+        <item>The Department of Agriculture and Fisheries (Distankan) of Rejang Lebong Regency, Bengkulu Province, said that the area of smallholder coffee plantations in the area reached 30,386.5 hectares with annual coffee bean production reaching 16,771.5 tons.</item>
+        <item>The Meteorology, Climatology and Geophysics Agency (BMKG) predicts the El Nino phenomenon will occur in Indonesia in the second semester of 2023 and may last until early 2024.</item>
+        <item>The coffee drinking lifestyle continues to grow in Indonesia. Not only does Indonesia have a culture of drinking coffee, but it is also a country that produces delicious coffee</item>
+        <item>Coffee is an Indonesian plantation commodity with the highest export opportunities. Coffee is an annual crop that can reach a productive age of up to 20 years. Coffee is the most widely traded plantation crop commodity,</item>
+        <item>The phenomenon of rising temperatures or El Nino is a real threat to coffee production in North Sumatra. In addition to being faced with pest problems, the coffee industry is also facing a European market embargo due to the enactment of the European Union\'s Anti-Deforestation Law.</item>
+    </string-array>
+
+    <string-array name="data_link">
+        <item>https://www.hextarfertilizerindonesia.com/kenali-hama-penyakit-tanaman-kopi-dan-pengendaliannya/</item>
+        <item>http://bisnisbali.com/harga-kopi-menguat-petani-tabanan-sumringah/</item>
+        <item>https://bengkulu.antaranews.com/berita/294897/luas-perkebunan-kopi-di-rejang-lebong-mencapai-303865-hektare</item>
+        <item>https://finance.detik.com/berita-ekonomi-bisnis/d-6762188/petani-kopi-perlu-waspadai-ancaman-iklim-ini-biar-tetap-cuan</item>
+        <item>https://www.nescafe.com/id/artikel/jenis-kopi-di-indonesia</item>
+        <item>https://ditjenbun.pertanian.go.id/peningkatan-kapabilitas-penanganan-opt-tanaman-kopi/</item>
+        <item>https://sumut.jpnn.com/sumut-terkini/4064/produksi-kopi-sumut-kian-terpuruk-terancam-el-nino-hama-hingga-embargo-eropa</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/artikel1</item>
+        <item>@drawable/artikel2</item>
+        <item>@drawable/artikel3</item>
+        <item>@drawable/artikel4</item>
+        <item>@drawable/artikel5</item>
+        <item>@drawable/artikel6</item>
+        <item>@drawable/artikel7</item>
+    </integer-array>
+
+    <string-array name="language">
+        <item>Indonesian</item>
+        <item>English</item>
+    </string-array>
+
+    <!--    nama penyakit-->
+    <string name="miner">Miner</string>
+    <string name="sehat">Tanamanmu Sehat</string>
+    <string name="phoma">Phoma</string>
+    <string name="rust">Rust</string>
+
+    <!--    nama jamur-->
+    <string name="virus_miner">Leucoptera Caffeine</string>
+    <string name="tdk_sakit">Tidak ada penyakit yang terdeteksi</string>
+    <string name="virus_phoma">Jamur Peyronellaea glomerata</string>
+    <string name="virus_rust">Jamur Hemilela Vaststrix</string>
+
+    <!--    desc Hasil-->
+    <string name="desc_miner">Leaf Miner is a disease that attacks coffee leaves caused by the attack of Leucoptera Caffeine or commonly called leaf miner pests. This pest often appears in lush plantation areas and eats the palisade parenchyma tissue on the leaves which causes</string>
+    <string name="desc_sehat">Currently your plants are in good condition. Continue to improve the quality of your plants by taking some precautions against other diseases and some medicines that can be used to maintain coffee health</string>
+    <string name="desc_phoma">Symptoms of phoma leaf blight infection are only seen on older leaves. Affected leaves show irregular, angular, yellow to brown lesions scattered across the lamina. As the disease progresses, the lesions grow and form larger patches that later turn into dull necrotic areas with gray centers and dark edges. In the final stage, the leaves begin to wilt and leaf drop occurs. Alternative host plants include common vines (Vitis vinifera) and Kentucky grass (Poa pratensis)</string>
+    <string name="desc_rust">Leaf rust disease mainly affects arabica coffee grown in the lowlands. Initially, light yellow spots are seen on the leaves. Later, the spots turn dark yellow and are covered with spore powder,....more</string>
+
+    <!--    pencegahan-->
+    <string name="cegah_miner">Do regular monitoring using Delta traps.</string>
+    <string name="perawatan"> Always clean the area around the plant, fertilize properly, and check soil moisture as it can affect coffee growth</string>
+    <string name="cegah_phoma">Clean the plant environment regularly to avoid mold growth</string>
+    <string name="cegah_rust">Pay attention to fertilization, proper irrigation, and do not plant too tightly</string>
+
+    <!--    obat-->
+    <string name="obat_miner">Using neurotoxic insecticides, such as organophosphates, carbamates, pyrethroids, neonicotinoids, and diamides. </string>
+    <string name="obat_sehat">Providing organic fertilizer, disease control, and the use of coffee balu containing the flavonoid quercetin.</string>
+    <string name="obat_phoma">Fungicide spraying, followed by miltox 0.3%</string>
+    <string name="obat_rust">Cupravit OB 21 0.4%, Bayleton 250 EC 0.1%, Anvil 50 SC 0.2%, Tilt 250 ES 0.1%, Sumiate 2.5 WP 0.2%</string>
+
+    <string name="succes">Scan result saved</string>
+    <string name="maaf_data_masih_kosong">Sorry the data is still empty</string>
+    <string name="isi_judul">Isi Judul</string>
+    <string name="isi_deskripsi">Isi Deskripsi</string>
+    <string name="tidak_ada_daun">Sorry there seems to be an error, there are currently no leaves detected.</string>
+    <string name="kembali">Back</string>
+</resources>
