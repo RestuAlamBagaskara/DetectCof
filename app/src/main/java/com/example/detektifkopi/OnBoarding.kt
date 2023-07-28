@@ -26,6 +26,7 @@ class OnBoarding : AppCompatActivity() {
 
     private lateinit var onBoardingAdapter: OnBoardingAdapter
     var next: TextView? = null
+    var skip: TextView? = null
     var sharedPreferences: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +34,7 @@ class OnBoarding : AppCompatActivity() {
         setContentView(R.layout.activity_on_boarding)
 
         next = findViewById(R.id.btn_next)
-
+//        skip = findViewById(R.id.skip)
         //inisialisasi
         judul1 = getString(R.string.selamat_dat)
         subJudul1 = getString(R.string.kami_senang)
@@ -91,8 +92,10 @@ class OnBoarding : AppCompatActivity() {
 
                 if (position == onBoardingAdapter.itemCount - 1) {
                     next?.text =  getString(R.string.mulai)
+                    skip?.text =  getString(R.string.empty)
                 } else {
                     next?.text =  getString(R.string.next)
+                    skip?.text =  getString(R.string.skip)
                 }
             }
         })
@@ -162,7 +165,7 @@ class OnBoarding : AppCompatActivity() {
             editor.apply()
         } else {
             // Bukan pertama kali dijalankan, langsung ke MainActivity
-            val intent = Intent(applicationContext, MainActivity::class.java)
+            val intent = Intent(applicationContext, SplashScreen::class.java)
             startActivity(intent)
             finish()
         }

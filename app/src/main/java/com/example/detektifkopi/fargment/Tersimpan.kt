@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.detektifkopi.DetailActivity
 import com.example.detektifkopi.HasilScanActivity
 import com.example.detektifkopi.R
 import com.example.detektifkopi.adapter.ScanSaveAdapter
@@ -19,18 +20,20 @@ import com.example.detektifkopi.data.DatabaseSave
 import com.example.detektifkopi.data.ScanResult
 
 
-class Tersimpan : Fragment(), ScanSaveAdapter.OnItemClickListener {
+class Tersimpan : Fragment(), ScanSaveAdapter.OnItemClickListener,
+    ScanSaveAdapter.ScanSaveAdapterCallback {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ScanSaveAdapter
     private lateinit var emptyImageView: ImageView
     private lateinit var emptyText: TextView
     private lateinit var scanResults: MutableList<ScanResult> // Initialize with an empty list
 
+
     override fun onItemClick(scanResult: ScanResult) {
-//        val intent = Intent(requireContext(), HasilScanActivity::class.java)
-//        intent.putExtra("capturedImage", BitmapFactory.decodeFile(scanResult.imagePath))
-//        intent.putExtra("resultLabel", scanResult.virus) // Ganti 'virus' dengan atribut yang sesuai
-//        startActivity(intent)
+        val intent = Intent(requireContext(), DetailActivity::class.java)
+        intent.putExtra("capturedImage", BitmapFactory.decodeFile(scanResult.imagePath))
+        intent.putExtra("resultLabel", scanResult.penyakit) // Ganti 'virus' dengan atribut yang sesuai
+        startActivity(intent)
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,10 +49,21 @@ class Tersimpan : Fragment(), ScanSaveAdapter.OnItemClickListener {
         val dbHandler = DatabaseSave(requireContext())
         scanResults = dbHandler.getAllScanResults().toMutableList()
 
+
         // Inisialisasi adapter dan atur RecyclerView
-        adapter = ScanSaveAdapter(scanResults, dbHandler, this)
+        adapter = ScanSaveAdapter(scanResults, dbHandler, this, this)
         recyclerView.adapter = adapter
 
+        updateVisibility()
+
+        return view
+    }
+
+    override fun onItemRemoved() {
+        updateVisibility()
+    }
+
+    private fun updateVisibility(){
         if (scanResults.isEmpty()) {
             recyclerView.visibility = View.GONE
             emptyImageView.visibility = View.VISIBLE
@@ -60,7 +74,6 @@ class Tersimpan : Fragment(), ScanSaveAdapter.OnItemClickListener {
             emptyText.visibility = View.GONE
         }
 
-        return view
     }
 
 

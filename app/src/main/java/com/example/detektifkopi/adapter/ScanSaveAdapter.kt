@@ -10,14 +10,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.detektifkopi.R
 import com.example.detektifkopi.data.DatabaseSave
 import com.example.detektifkopi.data.ScanResult
+import com.example.detektifkopi.fargment.Tersimpan
 
 class ScanSaveAdapter(
     private var scanResults: MutableList<ScanResult>,
     private val database: DatabaseSave,
-    private val itemClickListener: OnItemClickListener
+    private val itemClickListener: OnItemClickListener,
+    private val adapterCallback: ScanSaveAdapterCallback
 ) :
     RecyclerView.Adapter<ScanSaveAdapter.ViewHolder>() {
 
+    interface ScanSaveAdapterCallback {
+        fun onItemRemoved()
+    }
     interface OnItemClickListener {
         fun onItemClick(scanResult: ScanResult)
     }
@@ -29,14 +34,14 @@ class ScanSaveAdapter(
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val deleteButton: ImageView = itemView.findViewById(R.id.btn_delete)
 
-//        init {
-//            itemView.setOnClickListener {
-//                val position = adapterPosition
-//                if (position != RecyclerView.NO_POSITION) {
-//                    itemClickListener.onItemClick(scanResults[position])
-//                }
-//            }
-//        }
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    itemClickListener.onItemClick(scanResults[position])
+                }
+            }
+        }
 
     }
 
@@ -62,6 +67,8 @@ class ScanSaveAdapter(
             database.deleteScanResult(scanResult.id) // Call the method to delete from the database
             scanResults.removeAt(position) // Remove the item from the dataset
             notifyItemRemoved(position) // Notify RecyclerView about the removal
+
+            adapterCallback.onItemRemoved()
         }
     }
 

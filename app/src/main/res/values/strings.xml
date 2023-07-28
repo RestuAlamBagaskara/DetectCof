@@ -28,6 +28,7 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="mulai">Start</string>
+    <string name="empty"> </string>
     <string name="artikel_terkait">Related Article</string>
     <string name="view_all">View All</string>
     <string name="aplikasi_deteksi_kopi">DetectCof App</string>
@@ -125,4 +126,11 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="isi_deskripsi">Isi Deskripsi</string>
     <string name="tidak_ada_daun">Sorry there seems to be an error, there are currently no leaves detected.</string>
     <string name="kembali">Back</string>
+    <string name="tv_judul_tutor">How to use the DetectCof app</string>
+    <string name="tv_step1">1. On the home page click the detection button</string>
+    <string name="tv_step2">2. Select the image source from Camera/Gallery</string>
+    <string name="gambar">gambar</string>
+    <string name="tv_step3">3. Detection results will be displayed</string>
+    <string name="tutor">Guide</string>
+    <string name="detail">Detail</string>
 </resources>
