@@ -59,6 +59,4 @@
         android:src="@drawable/delete"
         />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

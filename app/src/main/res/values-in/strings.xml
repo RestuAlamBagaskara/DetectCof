@@ -132,4 +132,10 @@ Kami senang anda bergabung untuk meningkatkan kualitas Kopi Indonesia
     <string name="tv_step3">3. Hasil deteksi akan tampil</string>
     <string name="tutor">Tutorial</string>
     <string name="detail">Detail</string>
+    <string name="nav_about">Tentang</string>
+    <string name="tv_title_about">Tentang Kami</string>
+    <string name="tv_testi">Testimoni</string>
+    <string name="tvTesti">\"Wahhh, Aplikasi ini dapat membantu saya untuk mendeteksi lebih awal penyakit tanaman kopi saya\"</string>
+    <string name="tvTesti2">\"Dengan adanya aplikasi ini, membantu saya untuk mengetahui kondisi kesehatan tanaman kopi saya\"</string>
+
 </resources>
