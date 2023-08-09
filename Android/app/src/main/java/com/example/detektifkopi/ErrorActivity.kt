@@ -14,13 +14,17 @@ class ErrorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_error)
 
         btnScan = findViewById(R.id.back)
-        //Saat tombol Scan diKlik tampil bottom sheet
         btnScan.setOnClickListener {
             val mainActivityIntent = Intent(this, MainActivity::class.java)
             mainActivityIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             startActivity(mainActivityIntent)
             finish()
         }
+    }
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finishAffinity()
     }
 
 }

@@ -5,7 +5,7 @@
     <string name="nav_artikel">Artikel</string>
     <string name="nav_tersimpan">Tersimpan</string>
 
-    <string name="selamat_dat">Selamat Datang \ndi aplikasi DetectCof</string>
+    <string name="selamat_dat">Selamat Datang di aplikasi DetectCof</string>
     <string name="kami_senang">
 Kami senang anda bergabung untuk meningkatkan kualitas Kopi Indonesia
 </string>
@@ -27,6 +27,7 @@ Kami senang anda bergabung untuk meningkatkan kualitas Kopi Indonesia
     <string name="skip">Lewati</string>
     <string name="next">Lanjut</string>
     <string name="mulai">Mulai</string>
+    <string name="empty"> </string>
     <string name="artikel_terkait">Artikel Terkait</string>
     <string name="view_all">Lihat Semua</string>
     <string name="aplikasi_deteksi_kopi">Aplikasi DetectCof</string>
@@ -124,5 +125,17 @@ Kami senang anda bergabung untuk meningkatkan kualitas Kopi Indonesia
 
     <string name="tidak_ada_daun">Maaf sepertinya terjadi kesalahan, saat ini tidak ada daun yang terdeteksi.</string>
     <string name="kembali">Kembali</string>
+    <string name="tv_judul_tutor">Cara Penggunaan Aplikasi\n DetectCof</string>
+    <string name="tv_step1">1. Pada halaman beranda klik button Deteksi</string>
+    <string name="tv_step2">2. Pilih sumber gambar dari Kamera / Galeri</string>
+    <string name="gambar">gambar</string>
+    <string name="tv_step3">3. Hasil deteksi akan tampil</string>
+    <string name="tutor">Tutorial</string>
+    <string name="detail">Detail</string>
+    <string name="nav_about">Tentang</string>
+    <string name="tv_title_about">Tentang Kami</string>
+    <string name="tv_testi">Testimoni</string>
+    <string name="tvTesti">\"Wahhh, Aplikasi ini dapat membantu saya untuk mendeteksi lebih awal penyakit tanaman kopi saya\"</string>
+    <string name="tvTesti2">\"Dengan adanya aplikasi ini, membantu saya untuk mengetahui kondisi kesehatan tanaman kopi saya\"</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.detektifkopi.fargment.AboutFragment
 import com.example.detektifkopi.fargment.FragmentArtikel
 import com.example.detektifkopi.fargment.Home
 import com.example.detektifkopi.fargment.Tersimpan
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         val homeFragment = Home()
         val artikel = FragmentArtikel()
         val tersimpan = Tersimpan()
+        val about = AboutFragment()
 
         bottomNavigationView = findViewById(R.id.bottom_nav)
         bottomNavigationView.setOnNavigationItemSelectedListener {
@@ -40,6 +42,10 @@ class MainActivity : AppCompatActivity() {
                     setCurrentFragment(tersimpan)
                     Log.i(TAG, "Tersimpan")
                 }
+                R.id.navigation_About -> {
+                    setCurrentFragment(about)
+                    Log.i(TAG, "About")
+                }
 
             }
             val colorStateList = ContextCompat.getColorStateList(this, R.color.color_icon)
@@ -54,7 +60,8 @@ class MainActivity : AppCompatActivity() {
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        finish()
+        finishAffinity()
+
     }
 
     private fun setCurrentFragment(fragment: Fragment) {
@@ -68,6 +75,7 @@ class MainActivity : AppCompatActivity() {
             is Tersimpan -> bottomNavigationView.menu.findItem(R.id.navigation_simpan).isChecked = true
         }
     }
+
 
 
 }

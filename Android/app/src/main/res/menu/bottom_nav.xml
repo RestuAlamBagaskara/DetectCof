@@ -13,5 +13,8 @@
         android:id="@+id/navigation_simpan"
         android:icon="@drawable/simpan_icon"
         android:title="@string/nav_tersimpan" />
-
+    <item
+        android:id="@+id/navigation_About"
+        android:icon="@drawable/info"
+        android:title="@string/nav_about" />
 </menu>

@@ -28,6 +28,7 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="mulai">Start</string>
+    <string name="empty"> </string>
     <string name="artikel_terkait">Related Article</string>
     <string name="view_all">View All</string>
     <string name="aplikasi_deteksi_kopi">DetectCof App</string>
@@ -105,7 +106,7 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="desc_miner">Leaf Miner is a disease that attacks coffee leaves caused by the attack of Leucoptera Caffeine or commonly called leaf miner pests. This pest often appears in lush plantation areas and eats the palisade parenchyma tissue on the leaves which causes</string>
     <string name="desc_sehat">Currently your plants are in good condition. Continue to improve the quality of your plants by taking some precautions against other diseases and some medicines that can be used to maintain coffee health</string>
     <string name="desc_phoma">Symptoms of phoma leaf blight infection are only seen on older leaves. Affected leaves show irregular, angular, yellow to brown lesions scattered across the lamina. As the disease progresses, the lesions grow and form larger patches that later turn into dull necrotic areas with gray centers and dark edges. In the final stage, the leaves begin to wilt and leaf drop occurs. Alternative host plants include common vines (Vitis vinifera) and Kentucky grass (Poa pratensis)</string>
-    <string name="desc_rust">Leaf rust disease mainly affects arabica coffee grown in the lowlands. Initially, light yellow spots are seen on the leaves. Later, the spots turn dark yellow and are covered with spore powder,....more</string>
+    <string name="desc_rust">Leaf rust disease mainly affects arabica coffee grown in the lowlands. Initially, light yellow spots are seen on the leaves. Later, the spots turn dark yellow and are covered with spore powder</string>
 
     <!--    pencegahan-->
     <string name="cegah_miner">Do regular monitoring using Delta traps.</string>
@@ -125,4 +126,18 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="isi_deskripsi">Isi Deskripsi</string>
     <string name="tidak_ada_daun">Sorry there seems to be an error, there are currently no leaves detected.</string>
     <string name="kembali">Back</string>
+    <string name="tv_judul_tutor">How to use the DetectCof app</string>
+    <string name="tv_step1">1. On the home page click the detection button</string>
+    <string name="tv_step2">2. Select the image source from Camera/Gallery</string>
+    <string name="gambar">gambar</string>
+    <string name="tv_step3">3. Detection results will be displayed</string>
+    <string name="tutor">Guide</string>
+    <string name="detail">Detail</string>
+    <string name="nav_about">About</string>
+    <string name="tv_title_about">About Us</string>
+    <string name="tv_testi">Testimoni</string>
+    <string name="tvTesti">\"Wowhh, this application can help me to detect early the disease of my coffee plants\"</string>
+    <string name="tvTesti2">\"With this application, it helps me to know the health condition of my coffee plants\"</string>
+
+
 </resources>

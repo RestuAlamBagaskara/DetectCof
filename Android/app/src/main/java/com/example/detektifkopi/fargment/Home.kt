@@ -2,14 +2,11 @@ package com.example.detektifkopi.fargment
 
 import android.Manifest
 import android.app.Activity.RESULT_OK
-import android.content.Context
-import android.content.ContextWrapper
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Rect
-import android.hardware.Camera.ErrorCallback
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -25,10 +22,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.detektifkopi.BottomSheet
-import com.example.detektifkopi.ErrorActivity
-import com.example.detektifkopi.HasilScanActivity
-import com.example.detektifkopi.R
+import com.example.detektifkopi.*
 import com.example.detektifkopi.adapter.ListArtikelAdapter
 import com.example.detektifkopi.data.Artikel
 import com.google.android.material.button.MaterialButton
@@ -44,12 +38,8 @@ import java.nio.channels.FileChannel
 class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.ImagePickerListener {
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private lateinit var tfliteInterpreter: Interpreter
+    private lateinit var tfliteUnquantInterpreter: Interpreter
     private lateinit var btnScan: MaterialButton
-
-    // Deklarasikan variabel global untuk menyimpan data gambar dan textview
-    private var capturedImageBitmap: Bitmap? = null
-    private var penyakitValue: String = ""
-    private var virusValue: String = ""
 
 
     override fun onCreateView(
@@ -60,6 +50,7 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
 
 
         initializeTFLiteInterpreter()
+        initializeUnquantTFLiteInterpreter()
         val bottomNavigationView =
             requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav)
         val cardTutorial: CardView = view.findViewById(R.id.card_tutorial)
@@ -109,9 +100,10 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
         recyclerView?.adapter = adapter
 
         //Card Cara Penggunaan
-        val youtubeLink = "https://youtu.be/TXUPx7P4ttI"
+//        val youtubeLink = "https://youtu.be/TXUPx7P4ttI"
         cardTutorial.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeLink))
+//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeLink))
+            val intent = Intent(requireContext(), tutorial::class.java)
             startActivity(intent)
 
         }
@@ -192,31 +184,43 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
     }
 
     private fun imageProcessing(bitmap: Bitmap) {
-        val resizedImage = Bitmap.createScaledBitmap(bitmap, 150, 300, true)
+        val resizedImage = Bitmap.createScaledBitmap(bitmap, 300, 150, true)
         val tensorImage = TensorImage(DataType.FLOAT32)
         tensorImage.load(resizedImage)
 
-        val predictedLabel = runInference(tensorImage.tensorBuffer)
-        // Release TFLite resources
-//        tfliteInterpreter.close()
-
-
-        if (predictedLabel in 0..3) {
-            val intent = Intent(requireContext(), HasilScanActivity::class.java)
-            intent.putExtra("capturedImage", resizedImage)
-            when (predictedLabel) {
-                0 -> intent.putExtra("resultLabel", "Miner")
-                1 -> intent.putExtra("resultLabel", "Sehat")
-                2 -> intent.putExtra("resultLabel", "Phoma")
-                3 -> intent.putExtra("resultLabel", "Rust")
+        val resizedUnquantImage = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+        val tensorUnquantImage = TensorImage(DataType.FLOAT32)
+        tensorUnquantImage.load(resizedUnquantImage)
+        val predictedUnquantLabel = runInferenceUnquant(tensorUnquantImage.tensorBuffer)
+        Log.d("ini duan?", predictedUnquantLabel.toString())
+        if (predictedUnquantLabel == 0) {
+            val predictedLabel = runInference(tensorImage.tensorBuffer)
+            Log.d("Predic tanpa trashold:", predictedLabel.toString())
+            if (predictedLabel in 0..3) {
+                val intent = Intent(requireContext(), HasilScanActivity::class.java)
+                intent.putExtra("capturedImage", resizedImage)
+                when (predictedLabel) {
+                    0 -> intent.putExtra("resultLabel", "Miner")
+                    1 -> intent.putExtra("resultLabel", "Sehat")
+                    2 -> intent.putExtra("resultLabel", "Phoma")
+                    3 -> intent.putExtra("resultLabel", "Rust")
+                }
+                startActivity(intent)
+                // ... (kode sebelumnya untuk tampilan berdasarkan hasil prediksi)
+            } else {
+                val intent = Intent(requireContext(), ErrorActivity::class.java)
+                startActivity(intent)
             }
+        } else if (predictedUnquantLabel == 1) {
+            val intent = Intent(requireContext(), ErrorActivity::class.java)
             startActivity(intent)
         } else {
             val intent = Intent(requireContext(), ErrorActivity::class.java)
             startActivity(intent)
         }
-        Log.d("ini Penyakit", predictedLabel.toString())
     }
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -260,7 +264,7 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
         }
     }
 
-    //Menghubungkan dengan model ML
+    //Menghubungkan dengan ML
     private fun loadModelFile(): MappedByteBuffer {
         try {
             val assetFileDescriptor =
@@ -275,10 +279,29 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
         }
     }
 
-    //menginisialisasi TFLiteInterpreter untuk menjalankan model
+    //menginisialisasi TFLiteInterpreter gawe menjalankan model
     private fun initializeTFLiteInterpreter() {
         val options = Interpreter.Options()
         tfliteInterpreter = Interpreter(loadModelFile(), options)
+    }
+
+    private fun loadUnquantModel(): MappedByteBuffer {
+        try {
+            val assetFileDescriptor =
+                requireContext().assets.openFd("LeafAndNot.tflite")
+            val inputStream = FileInputStream(assetFileDescriptor.fileDescriptor)
+            val fileChannel = inputStream.channel
+            val startOffset = assetFileDescriptor.startOffset
+            val declaredLength = assetFileDescriptor.declaredLength
+            return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
+        } catch (e: IOException) {
+            throw RuntimeException("Error loading model", e)
+        }
+    }
+
+    private fun initializeUnquantTFLiteInterpreter() {
+        val options = Interpreter.Options()
+        tfliteUnquantInterpreter = Interpreter(loadUnquantModel(), options)
     }
 
     //proses prediksi model
@@ -287,18 +310,31 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
         inputFeature.loadBuffer(inputFeature.buffer)
         val outputFeature = TensorBuffer.createFixedSize(inputShape, DataType.FLOAT32)
         tfliteInterpreter.run(inputFeature.buffer, outputFeature.buffer)
+        val predictedLabels =
+            outputFeature.floatArray.indices.maxByOrNull { outputFeature.floatArray[it] }
+        Log.d("Predic penyakit:", predictedLabels.toString())
+        return predictedLabels ?: -1
 
-        val threshold = 0.6f
-        val predictedLabels = outputFeature.floatArray.indices.maxByOrNull { outputFeature.floatArray[it] }
+    }
+    private fun runInferenceUnquant(inputFeature: TensorBuffer): Int {
+        val inputShape = intArrayOf(1, 2)
+        inputFeature.loadBuffer(inputFeature.buffer)
+        val outputFeature = TensorBuffer.createFixedSize(inputShape, DataType.FLOAT32)
+        tfliteUnquantInterpreter.run(inputFeature.buffer, outputFeature.buffer)
 
-        return if (predictedLabels != null && outputFeature.floatArray[predictedLabels] >= threshold) {
-            predictedLabels
+        val predictedUnquantLabels = outputFeature.floatArray
+        val maxIndex = predictedUnquantLabels.indices.maxByOrNull { predictedUnquantLabels[it] }
+        return if (maxIndex == 0) {
+            0
         } else {
-            -1
+            1
         }
     }
 
-    //pas kembali data dihancurkan
+
+
+
+
     override fun onDestroy() {
         tfliteInterpreter.close()
         super.onDestroy()

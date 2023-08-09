@@ -15,11 +15,20 @@
         android:theme="@style/Theme.DetektifKopi"
         tools:targetApi="31">
         <activity
+            android:name=".tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false"></activity>
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ErrorActivity"
             android:exported="false" />
         <activity
             android:name=".HasilScanActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".OnBoarding"
             android:exported="true">
@@ -31,7 +40,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

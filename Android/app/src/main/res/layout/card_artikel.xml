@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/white"
     android:elevation="5dp"
+    android:layout_marginBottom="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp">
 
@@ -55,6 +56,7 @@
                 android:textAlignment="viewStart"
                 style="@style/medium_gray"
                 android:maxLines="2"
+                android:ellipsize="end"
                 android:justificationMode="inter_word"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_artikel"
