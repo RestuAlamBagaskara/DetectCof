@@ -264,7 +264,7 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
     private fun loadModelFile(): MappedByteBuffer {
         try {
             val assetFileDescriptor =
-                requireContext().assets.openFd("Coffee_disease_EfficientNetB0.tflite")
+                requireContext().assets.openFd("Coffee_disease_EfficientNetB0_Ver2.tflite")
             val inputStream = FileInputStream(assetFileDescriptor.fileDescriptor)
             val fileChannel = inputStream.channel
             val startOffset = assetFileDescriptor.startOffset
