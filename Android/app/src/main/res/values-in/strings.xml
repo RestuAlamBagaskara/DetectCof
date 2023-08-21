@@ -93,21 +93,25 @@ Kami senang anda bergabung untuk meningkatkan kualitas Kopi Indonesia
     <string name="sehat">Tanamanmu Sehat</string>
     <string name="phoma">Phoma</string>
     <string name="rust">Rust</string>
+    <string name="cerscospora">Cerscospora</string>
 
     <!--    nama jamur-->
     <string name="virus_miner">Leucoptera Caffeine</string>
+    <string name="virus_cerscospora">Jamur Cercospora kikuchii</string>
     <string name="tdk_sakit">Tidak ada penyakit yang terdeteksi</string>
     <string name="virus_phoma">Jamur Peyronellaea glomerata</string>
     <string name="virus_rust">Jamur Hemilela Vaststrix</string>
 
     <!--    desc Hasil-->
     <string name="desc_miner">Leaf Miner merupakan penyakit yang menyerang daun kopi yang disebabkan oleh serangan Leucoptera Caffeine atau yang biasa disebut hama penambang daun. Hama ini sering muncul pada area perkebunan yang rimbun dan memakan jaringan parenkim palisade pada daun yang menyebabkan</string>
+    <string name="desc_cerscospora">Daun-daun yang terinfeksi akan menunjukkan adanya bercak-bercak bulat, berwarna coklat kemerahan atau coklat tua, berbatas jelas.  Pada bercaka yang tua terdapat pusat yang berwarna putih kelabu, yang sering tampak ditaburi tepung hitam terdiri dari konidium jamur.  Di dalam bercak nampak adanya lingkaran-lingkaran konsentris bercincin-cincin).  Apabila serangan cukup berat dapat menyebabkan rontoknya daun.</string>
     <string name="desc_sehat">Saat ini kondisi tanaman anda dalam keadaan yang baik. Terus tingkatkan kualitas tanaman anda dengan melakukan beberapa pencegahan terhadap penyakit lain dan beberapa obat yang bisa digunakan untuk menjaga kesehatan kopi</string>
     <string name="desc_phoma">Gejala infeksi hawar daun phoma hanya terlihat pada daun yang lebih tua. Daun yang terserang menunjukkan lesi tidak teratur bersudut, berwarna kuning hingga cokelat yang tersebar di seluruh lamina. Ketika penyakit berkembang, lesi tumbuh dan membentuk bercak yang lebih besar yang kemudian berubah menjadi daerah nekrotik yang kusam dengan pusat abu-abu dan tepi gelap. Pada tahap akhir, daun mulai layu dan kerontokan daun terjadi. Tanaman inang alternatif termasuk tanaman merambat biasa (Vitis vinifera) dan rumput Kentucky (Poa pratensis).</string>
     <string name="desc_rust">Penyakit karat daun terutama menyerang kopi arabika yang ditanam di dataran rendah. Awalnya terlihat bercak-bercak kuning muda pada daun. Kemudian, bercak berubah kuning tua tertutup oleh tepung spora,terutama di permukaan daun sebelah bawah. </string>
 
     <!--    pencegahan-->
     <string name="cegah_miner">Lakukan pemantauan rutin menggunakan perangkap Delta.</string>
+    <string name="cegah_cerscospora">Kurangi kelembaban, atur pencahayaan, lakukan pemangkasan daun sakit.</string>
     <string name="perawatan">Selalu bersihakn area sekitar tanaman, lakukan pemupukan dengan baik, dan cek juga kelembapan tanah karena dapat berpengaruh bagi pertumbuhan kopi</string>
     <string name="cegah_phoma">Bersihkan lingkungan tanaman secara berkala untuk menghindari pertumbuhan jamur</string>
     <string name="cegah_rust">Memperhatikan pemupukan, pengairan yang tepat, dan jangan menanam terlalu rapat</string>
@@ -116,6 +120,7 @@ Kami senang anda bergabung untuk meningkatkan kualitas Kopi Indonesia
     <string name="obat_miner">Menggunakan insektisida neurotoksik, seperti organofosfat, karbamat, piretroid, neonicotinoid, dan diamida. </string>
     <string name="obat_sehat">Memberikan pupuk organik, pengendalian penyakit, dan penggunaan benalu kopi yang mengandung  flavonoid kuersetin.</string>
     <string name="obat_phoma">Penyemprotan fungisida, dilanjutkan miltox 0.3%</string>
+    <string name="obat_cerscospora"> Penyemprotan fungisida yang berbahan aktif tembaga (Copper sandoz, Cupravit dll) atau dengan fungisida berbahan aktif Mankozeb (Dithane M 45, manzate MX 200)</string>
     <string name="obat_rust">Cupravit OB 21 0,4% , Bayleton 250 EC 0,1%, Anvil 50 SC 0,2%, Tilt 250 ES 0,1%, Sumiate 2,5 WP 0,2%.</string>
 
     <string name="succes">Hasil Deteksi Berhasil disimpan</string>

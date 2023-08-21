@@ -30,6 +30,7 @@ class DetailActivity : AppCompatActivity() {
         // Atur teks pada text view berdasarkan nama penyakit
         val penyakit: TextView = findViewById(R.id.tv_penyakit_save)
         val des: TextView = findViewById(R.id.desc_save)
+        val jamur: TextView = findViewById(R.id.nama_jamur_save)
         val cegah: TextView = findViewById(R.id.tv_pencegahan_save)
         val obat: TextView = findViewById(R.id.tv_obat_save)
         when (namaPenyakit) {
@@ -37,25 +38,36 @@ class DetailActivity : AppCompatActivity() {
                 penyakit.text = getString(R.string.miner)
                 des.text = getString(R.string.desc_miner)
                 cegah.text = getString(R.string.cegah_miner)
+                jamur.text = getString(R.string.virus_miner)
                 obat.text = getString(R.string.obat_miner)
             }
             "Rust" -> {
                 penyakit.text = getString(R.string.rust)
                 des.text = getString(R.string.desc_rust)
                 cegah.text = getString(R.string.cegah_rust)
+                jamur.text = getString(R.string.virus_rust)
                 obat.text = getString(R.string.obat_rust)
             }
             "Phoma"-> {
                 penyakit.text = getString(R.string.phoma)
                 des.text = getString(R.string.desc_phoma)
                 cegah.text = getString(R.string.cegah_phoma)
+                jamur.text = getString(R.string.virus_phoma)
                 obat.text = getString(R.string.obat_phoma)
             }
             "Tanamanmu Sehat" -> {
                 penyakit.text = getString(R.string.sehat)
                 des.text = getString(R.string.desc_sehat)
                 cegah.text = getString(R.string.perawatan)
+                jamur.text = getString(R.string.tdk_sakit)
                 obat.text = getString(R.string.obat_sehat)
+            }
+            "Cerscospora" -> {
+                penyakit.text = getString(R.string.cerscospora)
+                des.text = getString(R.string.desc_cerscospora)
+                cegah.text = getString(R.string.cegah_cerscospora)
+                jamur.text = getString(R.string.virus_cerscospora)
+                obat.text = getString(R.string.obat_cerscospora)
             }
         }
 

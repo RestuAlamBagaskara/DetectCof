@@ -200,10 +200,11 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
                 val intent = Intent(requireContext(), HasilScanActivity::class.java)
                 intent.putExtra("capturedImage", resizedImage)
                 when (predictedLabel) {
-                    0 -> intent.putExtra("resultLabel", "Miner")
+                    0 -> intent.putExtra("resultLabel", "Cerscospora")
                     1 -> intent.putExtra("resultLabel", "Sehat")
-                    2 -> intent.putExtra("resultLabel", "Phoma")
-                    3 -> intent.putExtra("resultLabel", "Rust")
+                    2 -> intent.putExtra("resultLabel", "Miner")
+                    3 -> intent.putExtra("resultLabel", "Phoma")
+                    4 -> intent.putExtra("resultLabel", "Rust")
                 }
                 startActivity(intent)
                 // ... (kode sebelumnya untuk tampilan berdasarkan hasil prediksi)
@@ -268,7 +269,7 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
     private fun loadModelFile(): MappedByteBuffer {
         try {
             val assetFileDescriptor =
-                requireContext().assets.openFd("Coffee_disease_EfficientNetB0.tflite")
+                requireContext().assets.openFd("Coffee_disease_EfficientNetB0_Ver2.tflite")
             val inputStream = FileInputStream(assetFileDescriptor.fileDescriptor)
             val fileChannel = inputStream.channel
             val startOffset = assetFileDescriptor.startOffset
@@ -306,7 +307,7 @@ class Home : Fragment(), ListArtikelAdapter.OnItemClickCallback, BottomSheet.Ima
 
     //proses prediksi model
     private fun runInference(inputFeature: TensorBuffer): Int {
-        val inputShape = intArrayOf(1, 4)
+        val inputShape = intArrayOf(1, 5)
         inputFeature.loadBuffer(inputFeature.buffer)
         val outputFeature = TensorBuffer.createFixedSize(inputShape, DataType.FLOAT32)
         tfliteInterpreter.run(inputFeature.buffer, outputFeature.buffer)

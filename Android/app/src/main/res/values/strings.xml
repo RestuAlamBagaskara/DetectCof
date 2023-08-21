@@ -94,22 +94,26 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="miner">Miner</string>
     <string name="sehat">Tanamanmu Sehat</string>
     <string name="phoma">Phoma</string>
+    <string name="cerscospora">Cerscospora</string>
     <string name="rust">Rust</string>
 
     <!--    nama jamur-->
     <string name="virus_miner">Leucoptera Caffeine</string>
+    <string name="virus_cerscospora">Jamur Cercospora kikuchii</string>
     <string name="tdk_sakit">Tidak ada penyakit yang terdeteksi</string>
     <string name="virus_phoma">Jamur Peyronellaea glomerata</string>
     <string name="virus_rust">Jamur Hemilela Vaststrix</string>
 
     <!--    desc Hasil-->
     <string name="desc_miner">Leaf Miner is a disease that attacks coffee leaves caused by the attack of Leucoptera Caffeine or commonly called leaf miner pests. This pest often appears in lush plantation areas and eats the palisade parenchyma tissue on the leaves which causes</string>
+    <string name="desc_cerscospora">Infected leaves will show round, reddish-brown or dark-brown, well-demarcated patches.  In older spots there is a gray-white center, which often appears to be dusted with black powder consisting of fungal conidium.  Within the spot there are concentric circles with rings).  If the attack is severe enough, it can cause leaf drop.</string>
     <string name="desc_sehat">Currently your plants are in good condition. Continue to improve the quality of your plants by taking some precautions against other diseases and some medicines that can be used to maintain coffee health</string>
     <string name="desc_phoma">Symptoms of phoma leaf blight infection are only seen on older leaves. Affected leaves show irregular, angular, yellow to brown lesions scattered across the lamina. As the disease progresses, the lesions grow and form larger patches that later turn into dull necrotic areas with gray centers and dark edges. In the final stage, the leaves begin to wilt and leaf drop occurs. Alternative host plants include common vines (Vitis vinifera) and Kentucky grass (Poa pratensis)</string>
     <string name="desc_rust">Leaf rust disease mainly affects arabica coffee grown in the lowlands. Initially, light yellow spots are seen on the leaves. Later, the spots turn dark yellow and are covered with spore powder</string>
 
     <!--    pencegahan-->
     <string name="cegah_miner">Do regular monitoring using Delta traps.</string>
+    <string name="cegah_cerscospora">Reduce humidity, adjust lighting, prune diseased leaves, use copper fungicide or mankozeb.</string>
     <string name="perawatan"> Always clean the area around the plant, fertilize properly, and check soil moisture as it can affect coffee growth</string>
     <string name="cegah_phoma">Clean the plant environment regularly to avoid mold growth</string>
     <string name="cegah_rust">Pay attention to fertilization, proper irrigation, and do not plant too tightly</string>
@@ -118,6 +122,7 @@ We are happy to have you on board to improve the quality of Indonesian coffee
     <string name="obat_miner">Using neurotoxic insecticides, such as organophosphates, carbamates, pyrethroids, neonicotinoids, and diamides. </string>
     <string name="obat_sehat">Providing organic fertilizer, disease control, and the use of coffee balu containing the flavonoid quercetin.</string>
     <string name="obat_phoma">Fungicide spraying, followed by miltox 0.3%</string>
+    <string name="obat_cerscospora">Spraying with copper-active fungicides (Copper sandoz, Cupravit etc.) or with Mankozeb-active fungicides (Dithane M 45, manzate MX 200)</string>
     <string name="obat_rust">Cupravit OB 21 0.4%, Bayleton 250 EC 0.1%, Anvil 50 SC 0.2%, Tilt 250 ES 0.1%, Sumiate 2.5 WP 0.2%</string>
 
     <string name="succes">Scan result saved</string>

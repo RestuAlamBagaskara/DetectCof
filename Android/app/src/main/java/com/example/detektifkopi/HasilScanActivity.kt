@@ -48,6 +48,7 @@ class HasilScanActivity : AppCompatActivity() {
 
         // Set the text on the TextView based on the result label
         tvPenyakit.text = when (resultLabel) {
+            "Cerscospora" -> getString(R.string.cerscospora)
             "Miner" -> getString(R.string.miner)
             "Sehat" -> getString(R.string.sehat)
             "Phoma" -> getString(R.string.phoma)
@@ -55,6 +56,7 @@ class HasilScanActivity : AppCompatActivity() {
             else -> ""
         }
         tvJamur.text = when (resultLabel) {
+            "Cerscospora" -> getString(R.string.virus_cerscospora)
             "Miner" -> getString(R.string.virus_miner)
             "Sehat" -> getString(R.string.tdk_sakit)
             "Phoma" -> getString(R.string.virus_phoma)
@@ -62,6 +64,7 @@ class HasilScanActivity : AppCompatActivity() {
             else -> ""
         }
         tvDeskripsi.text = when (resultLabel) {
+            "Cerscospora" -> getString(R.string.desc_cerscospora)
             "Miner" -> getString(R.string.desc_miner)
             "Sehat" -> getString(R.string.desc_sehat)
             "Phoma" -> getString(R.string.desc_phoma)
@@ -69,6 +72,7 @@ class HasilScanActivity : AppCompatActivity() {
             else -> ""
         }
         tvPencegahan.text = when (resultLabel) {
+            "Cerscospora" -> getString(R.string.cegah_cerscospora)
             "Miner" -> getString(R.string.cegah_miner)
             "Sehat" -> getString(R.string.perawatan)
             "Phoma" -> getString(R.string.cegah_phoma)
@@ -77,6 +81,7 @@ class HasilScanActivity : AppCompatActivity() {
         }
 
         tvObat.text = when (resultLabel) {
+            "Cerscospora" -> getString(R.string.obat_cerscospora)
             "Miner" -> getString(R.string.obat_miner)
             "Sehat" -> getString(R.string.obat_sehat)
             "Phoma" -> getString(R.string.obat_phoma)
